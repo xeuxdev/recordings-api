@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"strconv"
 
 	"github.com/go-sql-driver/mysql"
@@ -23,8 +24,8 @@ var db *sql.DB
 func main() {
 
 	cfg := mysql.Config{
-		User:   "root",
-		Passwd: "xeuxDev!123",
+		User:   os.GetEnv("DBUSER"),
+		Passwd: os.Getenv("DBPASS"),
 		Net:    "tcp",
 		Addr:   "127.0.0.1:3306",
 		DBName: "recordings",
