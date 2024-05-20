@@ -24,7 +24,7 @@ var db *sql.DB
 func main() {
 
 	cfg := mysql.Config{
-		User:   os.GetEnv("DBUSER"),
+		User:   os.Getenv("DBUSER"),
 		Passwd: os.Getenv("DBPASS"),
 		Net:    "tcp",
 		Addr:   "127.0.0.1:3306",
